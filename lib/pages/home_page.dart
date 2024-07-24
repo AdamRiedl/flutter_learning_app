@@ -8,16 +8,44 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.primary,
-        centerTitle: true,
-        title: const Text(
-          'Flutter AppBar',
-          style: TextStyle(color: Colors.white),
+        appBar: AppBar(
+          backgroundColor: AppColors.primary,
+          centerTitle: true,
+          title: const Text(
+            'Flutter AppBar',
+            style: TextStyle(color: Colors.white),
+          ),
+          actions: [Icon(Icons.location_city_rounded)],
         ),
-        actions: [Icon(Icons.location_city_rounded)],
-      ),
-      body: Container(),
-    );
+        body: ListView(
+          children: mockUsersFromServer(),
+        ));
   }
+}
+
+_userItem() {
+  return Row(
+    children: [
+      Image.asset(
+        'assets/temp/notrealperson1.jpeg',
+        width: 40,
+        height: 40,
+      ),
+      SizedBox(
+        width: 16,
+      ),
+      Text(
+        "Pedro Ramirez",
+        style: TextStyle(color: Colors.white),
+      ),
+    ],
+  );
+}
+
+List<Widget> mockUsersFromServer() {
+  List<Widget> users = [];
+  for (var i = 0; i < 1000; i++) {
+    users.add(_userItem());
+  }
+  return users;
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning_app/pages/home_page.dart';
 import 'package:flutter_learning_app/pages/login_page.dart';
+import 'package:flutter_learning_app/pages/main_page.dart';
 import 'package:flutter_learning_app/styles/app_colors.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
+        '/main': (context) => MainPage()
       },
     );
   }
